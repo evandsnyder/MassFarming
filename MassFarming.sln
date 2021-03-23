@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassFarming", "MassFarming\MassFarming.csproj", "{9484BE96-EB4A-48A7-8342-63A8D9A3DC0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MassFarming", "MassFarming\MassFarming.csproj", "{9484BE96-EB4A-48A7-8342-63A8D9A3DC0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{34CC1B42-6302-4CA3-897B-3020857E956B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{34CC1B42-6302-4CA3-897B-3020857E956B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LoggerService\LoggerService.csproj", "{87F20882-55A6-4C51-B12C-E58754F20916}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerService", "LoggerService\LoggerService.csproj", "{87F20882-55A6-4C51-B12C-E58754F20916}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{5D24CD30-A9F3-420D-BF3B-01C334C30CD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{5D24CD30-A9F3-420D-BF3B-01C334C30CD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{826B88E4-9EEE-4542-BE4E-5CA8D413F7F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5D24CD30-A9F3-420D-BF3B-01C334C30CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D24CD30-A9F3-420D-BF3B-01C334C30CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D24CD30-A9F3-420D-BF3B-01C334C30CD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{826B88E4-9EEE-4542-BE4E-5CA8D413F7F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{826B88E4-9EEE-4542-BE4E-5CA8D413F7F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{826B88E4-9EEE-4542-BE4E-5CA8D413F7F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{826B88E4-9EEE-4542-BE4E-5CA8D413F7F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

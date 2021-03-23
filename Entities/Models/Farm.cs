@@ -12,7 +12,6 @@ namespace Entities.Models
         [Key]
         public Guid FarmId { get; set; }
         public string FarmName { get; set; }
-        public string FarmAddress { get; set; }
         public string OwnerName { get; set; }
         public string Description { get; set; }
         public int IsActive { get; set; }
@@ -22,5 +21,7 @@ namespace Entities.Models
 
         public ICollection<FarmCategory> Categories { get; set; }
         public ICollection<Schedule> Schedules { get; set; }
+
+        public Address Address { get; set; }
     }
 }

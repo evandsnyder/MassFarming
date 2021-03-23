@@ -34,7 +34,9 @@ namespace MassFarming
             services.ConfigureLoggerService();
             services.ConfigureCors();
             services.ConfigureIISIntegration();
-            
+
+            services.ConfigureSqlServerContext(Configuration);
+            services.ConfigureRepositoryWrapper();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
