@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
@@ -8,6 +9,7 @@ namespace Entities.Models
     [Table("Address")]
     public class Address
     {
+        [Key]
         public Guid AddressId { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
@@ -17,6 +19,6 @@ namespace Entities.Models
 
         [ForeignKey(nameof(Farm))]
         public Guid FarmId { get; set; }
-        public Farm Farm { get; set; }
+        public FarmCategory Farm { get; set; }
     }
 }

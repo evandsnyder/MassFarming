@@ -8,7 +8,7 @@ namespace Contracts
     public interface IRepositoryWrapper
     {
         IFarmRepository Farm { get; }
-        IFarmTypeRepository FarmCategory { get; }
+        IFarmCategoryRepository FarmCategory { get; }
         IAddressRepository Address { get; }
         IScheduleRepository Schedule { get; }
 

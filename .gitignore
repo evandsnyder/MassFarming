@@ -340,3 +340,5 @@ ASALocalRun/
 healthchecksdb
 
 appsettings*
+internal_logs/*
+internal_logs

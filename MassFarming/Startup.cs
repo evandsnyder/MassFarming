@@ -1,3 +1,4 @@
+using Contracts;
 using MassFarming.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,7 +23,7 @@ namespace MassFarming
     {
         public Startup(IConfiguration configuration)
         {
-            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "Properties/nlog.config"));
+            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/Properties/nlog.config"));
             Configuration = configuration;
         }
 
@@ -55,7 +56,7 @@ namespace MassFarming
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MassFarming v1"));
             }
 
-            app.UseExceptionHandler(logger);
+            app.ConfigureExceptionHandler();
             
             app.UseHttpsRedirection();
             app.UseStaticFiles();

@@ -9,9 +9,9 @@ namespace Repository
 {
     public class RepositoryWrapper : IRepositoryWrapper
     {
-        private RepositoryContext _repoContext;
+        private readonly RepositoryContext _repoContext;
         private IFarmRepository _farm;
-        private IFarmTypeRepository _farmCategory;
+        private IFarmCategoryRepository _farmCategory;
         private IAddressRepository _address;
         private IScheduleRepository _schedule;
 
@@ -27,12 +27,12 @@ namespace Repository
             }
         }
 
-        public IFarmTypeRepository FarmCategory
+        public IFarmCategoryRepository FarmCategory
         {
             get
             {
                 if (_farmCategory == null)
-                    _farmCategory = new FarmTypeRepository(_repoContext);
+                    _farmCategory = new FarmCategoryRepository(_repoContext);
                 return _farmCategory;
             }
         }

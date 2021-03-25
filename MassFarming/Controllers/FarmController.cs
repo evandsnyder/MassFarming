@@ -11,8 +11,8 @@ namespace MassFarming.Controllers
     [ApiController]
     public class FarmController : ControllerBase
     {
-        private ILoggerManager _logger;
-        private IRepositoryWrapper _repository;
+        private readonly ILoggerManager _logger;
+        private readonly IRepositoryWrapper _repository;
 
         public FarmController(ILoggerManager logger, IRepositoryWrapper repository)
         {
@@ -23,16 +23,8 @@ namespace MassFarming.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllOwners()
         {
-            try
-            {
-                var farms = await _repository.Farm.GetAllFarmsAsync();
-                return Ok(farms);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"SOMETHING WENT WRONG: {ex.Message}");
-                return StatusCode(500, "Internal Server Error");
-            }
+            var farms = await _repository.Farm.GetAllFarmsAsync();
+            return Ok(farms);
         }
     }
 }
