@@ -14,6 +14,7 @@ namespace Repository
         private IFarmCategoryRepository _farmCategory;
         private IAddressRepository _address;
         private IScheduleRepository _schedule;
+        private IIsARepository _isA;
 
         public IFarmRepository Farm
         {
@@ -56,6 +57,18 @@ namespace Repository
                 if (_schedule == null)
                     _schedule = new ScheduleRepository(_repoContext);
                 return _schedule;
+            }
+        }
+
+        public IIsARepository IsA
+        {
+            get
+            {
+                if(_isA == null)
+                {
+                    _isA = new IsARepository(_repoContext);
+                }
+                return _isA;
             }
         }
 

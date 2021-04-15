@@ -11,6 +11,7 @@ namespace Contracts
         IFarmCategoryRepository FarmCategory { get; }
         IAddressRepository Address { get; }
         IScheduleRepository Schedule { get; }
+        IIsARepository IsA { get; }
 
         Task SaveAsync();
     }

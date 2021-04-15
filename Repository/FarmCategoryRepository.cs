@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class FarmCategoryRepository : RepositoryBase<FarmCategory>, IFarmCategoryRepository
+    public class FarmCategoryRepository : RepositoryBase<FarmType>, IFarmCategoryRepository
     {
         public FarmCategoryRepository(RepositoryContext context) : base(context) { }
 
-        public async Task<IEnumerable<FarmCategory>> GetAllFarmTypesAsync() => await FindAll().OrderBy(cat => cat.Category).ToListAsync();
+        public async Task<IEnumerable<FarmType>> GetAllFarmTypesAsync() => await FindAll().OrderBy(cat => cat.Category).ToListAsync();
     }
 }

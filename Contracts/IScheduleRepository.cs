@@ -7,5 +7,6 @@ namespace Contracts
 {
     public interface IScheduleRepository : IRepositoryBase<Schedule>
     {
+        IEnumerable<Schedule> GetByFarmId(Guid id);
     }
 }

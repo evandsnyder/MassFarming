@@ -16,10 +16,10 @@ namespace Entities.Models
         public string Description { get; set; }
         public int IsActive { get; set; }
         public int DoesDelivery { get; set; }
+        public int IsContactable { get; set; }
         public string WebsiteUrl { get; set; }
         public string ContactEmail { get; set; }
-
-        public ICollection<FarmCategory> Categories { get; set; }
+        public ICollection<IsA> Categories { get; set; }
         public ICollection<Schedule> Schedules { get; set; }
 
         public Address Address { get; set; }

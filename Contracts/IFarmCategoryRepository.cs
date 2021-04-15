@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Contracts
 {
-    public interface IFarmCategoryRepository : IRepositoryBase<FarmCategory>
+    public interface IFarmCategoryRepository : IRepositoryBase<FarmType>
     {
-        Task<IEnumerable<FarmCategory>> GetAllFarmTypesAsync();
+        Task<IEnumerable<FarmType>> GetAllFarmTypesAsync();
     }
 }

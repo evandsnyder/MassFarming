@@ -16,9 +16,9 @@ namespace Entities.Models
         public string City { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
 
-        [ForeignKey(nameof(Farm))]
         public Guid FarmId { get; set; }
-        public FarmCategory Farm { get; set; }
     }
 }

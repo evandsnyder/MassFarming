@@ -6,15 +6,17 @@ using System.Text;
 
 namespace Entities.Models
 {
-    [Table("Schedule")]
-    public class Schedule
+    [Table("IsA")]
+    public class IsA
     {
         [Key]
         public Guid Id { get; set; }
-        public int DayOfWeek { get; set; }
-        public string StartTime { get; set; }
-        public string EndTime { get; set; }
 
+        [ForeignKey(nameof(Farm))]
         public Guid FarmId { get; set; }
+
+        [ForeignKey(nameof(FarmType))]
+        public Guid FarmTypeId { get; set; }
+        public FarmType FarmType { get; set; }
     }
 }

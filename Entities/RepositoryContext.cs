@@ -15,7 +15,8 @@ namespace Entities
 
         public DbSet<Farm> Farms { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
-        public DbSet<FarmCategory> FarmCategories { get; set; }
+        public DbSet<FarmType> FarmTypes { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<IsA> IsAs { get; set; }
     }
 }

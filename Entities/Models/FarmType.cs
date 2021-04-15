@@ -7,7 +7,7 @@ using System.Text;
 namespace Entities.Models
 {
     [Table("FarmType")]
-    public class FarmCategory
+    public class FarmType
     {
         [Key]
         public Guid FarmTypeId { get; set; }

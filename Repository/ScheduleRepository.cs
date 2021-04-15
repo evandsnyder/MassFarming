@@ -10,5 +10,10 @@ namespace Repository
     public class ScheduleRepository : RepositoryBase<Schedule>, IScheduleRepository
     {
         public ScheduleRepository(RepositoryContext context) : base(context) { }
+
+        public IEnumerable<Schedule> GetByFarmId(Guid id)
+        {
+            return FindByCondition(sched => sched.FarmId.Equals(id));
+        }
     }
 }

@@ -39,6 +39,8 @@ namespace MassFarming
             services.ConfigureSqlServerContext(Configuration);
             services.ConfigureRepositoryWrapper();
 
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
