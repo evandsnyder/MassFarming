@@ -23,7 +23,15 @@ namespace MassFarming
     {
         public Startup(IConfiguration configuration)
         {
-            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/Properties/nlog.config"));
+            try
+            {
+                LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/Properties/nlog.config"));
+            } catch (FileNotFoundException ex)
+            {
+                Console.WriteLine(Directory.GetCurrentDirectory());
+                Environment.Exit(-1);
+            }
+            
             Configuration = configuration;
         }
 
