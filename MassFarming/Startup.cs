@@ -26,10 +26,9 @@ namespace MassFarming
             try
             {
                 LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/Properties/nlog.config"));
-            } catch (FileNotFoundException ex)
+            } catch (FileNotFoundException)
             {
-                Console.WriteLine(Directory.GetCurrentDirectory());
-                Environment.Exit(-1);
+                LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "web.config"));
             }
             
             Configuration = configuration;
