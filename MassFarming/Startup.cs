@@ -23,7 +23,14 @@ namespace MassFarming
     {
         public Startup(IConfiguration configuration)
         {
-            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/Properties/nlog.config"));
+            try
+            {
+                LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/Properties/nlog.config"));
+            } catch (FileNotFoundException)
+            {
+                LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
+            }
+            
             Configuration = configuration;
         }
 
@@ -60,7 +67,7 @@ namespace MassFarming
 
             app.ConfigureExceptionHandler();
             
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCors("CorsPolicy");
 
