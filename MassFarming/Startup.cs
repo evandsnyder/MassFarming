@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using NLog;
+using NLog.Config;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,7 +29,10 @@ namespace MassFarming
                 LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/Properties/nlog.config"));
             } catch (FileNotFoundException)
             {
-                LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
+                LoggingConfiguration config = new LoggingConfiguration();
+                var logFile = new NLog.Targets.FileTarget("logfile") { FileName = "./logs/${shortdate}_logfile.txt", Layout = "${longdate} ${level:uppercase=true} ${message}"};
+                config.AddRule(NLog.LogLevel.Debug, NLog.LogLevel.Fatal, logFile);
+                LogManager.Configuration = config;
             }
             
             Configuration = configuration;
