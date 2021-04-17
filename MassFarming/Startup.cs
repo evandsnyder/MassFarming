@@ -31,7 +31,9 @@ namespace MassFarming
             {
                 LoggingConfiguration config = new LoggingConfiguration();
                 var logFile = new NLog.Targets.FileTarget("logfile") { FileName = "./logs/${shortdate}_logfile.txt", Layout = "${longdate} ${level:uppercase=true} ${message}"};
+                var logConsole = new NLog.Targets.ConsoleTarget("logconsole");
                 config.AddRule(NLog.LogLevel.Debug, NLog.LogLevel.Fatal, logFile);
+                config.AddRule(NLog.LogLevel.Debug, NLog.LogLevel.Fatal, logConsole);
                 LogManager.Configuration = config;
             }
             
